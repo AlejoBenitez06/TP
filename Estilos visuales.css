@@ -1,160 +1,308 @@
-/* 1. Reset y fuentes */
+:root {
+  --primary: #673de6;
+  --dark-bg: #1d0e44;
+  --text-light: #fff;
+  --text-dark: #111;
+  --btn-radius: 8px;
+  --max-width: 1200px;
+  --font: 'Inter', sans-serif;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font);
+  color: var(--text-dark);
   line-height: 1.6;
-  color: #333;
   background-color: #fff;
 }
 
-/* 2. Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header img.logo {
-  max-width: 150px;
-  height: auto;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-/* 3. Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 10%;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1;
-  max-width: 500px;
-}
-
-.hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-.hero img {
-  flex: 1;
+img {
   max-width: 100%;
   height: auto;
 }
 
-/* 4. Migración simplificada */
-.migracion {
-  background-color: #f5f5f5;
-  padding: 60px 10%;
+.logo {
+  width: 120px;   /* o el tamaño que desees */
+  height: auto;   /* mantiene la proporción original */
+}
+
+
+/* Layout Helpers */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  padding: 20px 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* Asegura separación equilibrada */
+.header-content {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px; /* espacio entre logo y nav */
+}
+
+/* Que el nav se acerque más al logo */
+.main-nav {
+  flex-grow: 1;
+}
+
+/* Menú horizontal */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Espacio entre texto e ícono */
+  text-decoration: none;
+  color: var(--text-dark); /* o #111 */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Ícono al lado del texto */
+.chevron-icon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  padding: 8px 16px;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: var(--primary);
+  border: 1px solid #ccc;
+}
+
+/* Hero */
+.hero {
+  background: #f9f6ff;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   text-align: center;
 }
 
-.migracion h2 {
+.hero h1 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.migracion p {
-  max-width: 600px;
-  margin-bottom: 30px;
-  font-size: 1rem;
+.hero p {
+  margin-bottom: 24px;
 }
 
-.migracion img {
-  max-width: 100%;
-  height: auto;
+.hero-image {
+  margin-bottom: 32px;
 }
 
-/* 5. Footer */
-footer {
-  background-color: #0b0b0b;
+/* Migration Section */
+.migration {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.migration h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.migration p {
+  margin-bottom: 32px;
+}
+
+.migration-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background-color: #2a1a5e;
+  padding: 20px;
+  border-radius: var(--btn-radius);
+  width: 280px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.footer {
+  background-color: #1d0e44; /* Morado oscuro */
+  padding: 40px 0;
+  text-align: center;
+  color: #fff; /* Texto blanco para buen contraste */
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #f0eaff; /* Un blanco ligeramente lavanda */
+}
+
+.footer-copy {
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #d3c3f2; /* Un lavanda claro */
+}
+
+.footer .btn {
+  background-color: #673de6; /* Mantener tu color primario morado */
   color: #fff;
-  padding: 40px 10%;
+  padding: 10px 20px;
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer .btn:hover {
+  background-color: #5329b8; /* Morado más oscuro al pasar el mouse */
+}
+
+
+/* Footer ampliado */
+.footer-expanded {
+  background-color: #f2f2ff;
+  padding: 40px 0 80px;
+}
+
+.footer-expanded-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 180px; /* ancho flexible con mínimo */
+}
+
+.footer-column h4 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--primary);
 }
 
 .footer-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  margin-bottom: 40px;
+  align-items: center;
+  gap: 20px;           /* espacio entre imágenes */
+  flex-wrap: wrap;     /* que bajen a la siguiente fila si hace falta */
+  padding: 20px 0;
 }
 
 .footer-cards img {
-  max-width: 100px;
+  width: 100px;         /* tamaño pequeño */
   height: auto;
-  filter: grayscale(1);
+  object-fit: contain; /* que mantenga proporción */
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1)); /* sombra suave opcional */
+  cursor: default;
+  transition: transform 0.3s ease;
 }
 
-.footer-bottom {
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.7;
+.footer-cards img:hover {
+  transform: scale(1.1); /* pequeño zoom al pasar mouse */
 }
 
-/* 6. Responsive Design */
+
+/* Responsive para footer ampliado */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul {
+  .footer-expanded-container {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
-
-  header {
-    flex-direction: column;
-  }
-
-  .footer-cards {
-    flex-direction: column;
-    align-items: center;
+  .footer-column {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 2rem;
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 
-  .migracion h2 {
-    font-size: 1.5rem;
+  .hero-text, .hero-image {
+    width: 48%;
   }
 
-  nav ul li a {
-    font-size: 0.9rem;
+  .migration-cards {
+    flex-wrap: nowrap;
   }
 }
